@@ -7,7 +7,7 @@ import sys
 
 try:
     if len(sys.argv) != 2:
-        raise ValueError('Please provide an file name.')
+        raise ValueError('Please provide an File Name.')
     file_name = sys.argv[1]
     lex = Lexer(file_name)
     parser = Parser(lex)
