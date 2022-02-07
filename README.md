@@ -71,7 +71,7 @@ block --> { decls stmts }
 
 decls --> decls decl | ϵ
 
-decl --> type id ;
+decl --> type **id** ;
 
 type --> type [ num ] | basic
 
