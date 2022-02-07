@@ -163,7 +163,7 @@ instruction copies the value of y into x:
 
    Example:
    
-    	PYTHONPATH=%userprofile%\<download_directory>\simple-syntax-translator
+    	set PYTHONPATH=%userprofile%\<download_directory>\simple-syntax-translator
 
 
 4) Run Translator
