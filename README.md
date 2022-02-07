@@ -39,11 +39,17 @@ THE SOURCE LANGUAGE
 For specifying syntax, we present a widely used notation, called context-free grammars or BNF (for Backus-Naur Form)
 
 program --> block
+
 block --> { decls stmts }
+
 decls --> decls decl | ϵ
+
 decl --> type id ;
+
 type --> type [ num ] | basic
+
 stmts --> stmts stmt | ϵ
+
 stmt --> loc = bool ;
              | if ( bool ) stmt
              | if ( bool ) stmt else stmt
@@ -51,7 +57,9 @@ stmt --> loc = bool ;
              | do stmt while ( bool ) ;
              | break ;
              |block
+	     
 loc --> loc [ bool ] | id
+
 bool --> bool || join | join
 join --> join && equality | equality
 equality --> equality == rel | equality != rel | rel
