@@ -1,29 +1,29 @@
 # simple-syntax-translator
-INTRODUCCTION
+## Introduction
 
 This example shows a software development that translates representative programming language statements
 into three-address code, an intermediate representation.
 
 
-EXAMPLE
+## Example
 
 This syntax-directed translator maps code fragments as Fig. 1 into three-address code of the form of Fig. 2.
 
 {
 
-int i; int j; float[100] a; float v; float x;
+	int i; int j; float[100] a; float v; float x;
 
-while ( true ) {
+	while ( true ) {
 
-do i = i+1; while ( a[i] < v );
+		do i = i+1; while ( a[i] < v );
 
-do j = j-1; while ( a[j] > v );
+		do j = j-1; while ( a[j] > v );
 
-if ( i >= j ) break;
+		if ( i >= j ) break;
 
-x = a[i]; a[i] = a[j]; a[j] = x;
+		x = a[i]; a[i] = a[j]; a[j] = x;
 
-}
+	}
 
 }
 
@@ -61,7 +61,7 @@ Fig 1.
 Fig 2.
 
 
-THE SOURCE LANGUAGE
+## The Source Language
 
 For specifying syntax, we present the BNF (Backus-Naur Form):
 
@@ -73,25 +73,25 @@ decls --> decls decl | ϵ
 
 decl --> type **id** ;
 
-type --> type [ num ] | basic
+type --> type [**num**] | **basic**
 
 stmts --> stmts stmt | ϵ
 
-stmt --> loc = bool ;
+stmt --> loc = bool;
 
-             | if ( bool ) stmt
+  | **if** ( bool ) stmt
 	     
-             | if ( bool ) stmt else stmt
+  | **if** ( bool ) stmt **else** stmt
 	     
-             | while ( bool ) stmt
+  | **while** ( bool ) stmt
 	     
-             | do stmt while ( bool ) ;
+  | **do** stmt **while** ( bool ) ;
 	     
-             | break ;
+  | **break** ;
 	     
-             |block
+  | block
 	     
-loc --> loc [ bool ] | id
+loc --> loc [ bool ] | **id**
 
 bool --> bool || join | join
 
@@ -107,10 +107,10 @@ term --> term * unary | term / unary | unary
 
 unary -->! unary |- unary | factor
 
-factor --> ( bool ) | loc | num | real | true | false
+factor --> ( bool ) | loc | **num** | **real** | **true** | **false**
 
 
-THREE-ADDRESS INSTRUCTIONS
+## Three-Address Instructions Code
 
 Three-address code is a sequence of instructions of the form
 
@@ -143,27 +143,27 @@ instruction copies the value of y into x:
 		x = y
 
 
-EXECUTION
+## Execution
 
 1) Update system variable path with python location
 
     Example:
     
-     set path=%userprofile%\software\python\Python37
+    	set path=%userprofile%\software\python\Python37
 
 
 2) Edit a file with a source language program.
 
    Example: 
    
-    Edit %userprofile%\<download_directory>\simple-syntax-translator\tests\resources\TestSource.txt
+    	Edit %userprofile%\<download_directory>\simple-syntax-translator\tests\resources\TestSource.txt
 
 
 3) Set PYTHONPATH
 
    Example:
    
-     PYTHONPATH=%userprofile%\<download_directory>\simple-syntax-translator
+    	PYTHONPATH=%userprofile%\<download_directory>\simple-syntax-translator
 
 
 4) Run Translator
