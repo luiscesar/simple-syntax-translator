@@ -30,6 +30,7 @@ This syntax-directed translator maps code fragments as Fig. 1 into three-address
 Fig 1.
 
 
+
 1: i = i + 1
 
 2: t1 = a [ i ]
