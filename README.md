@@ -64,7 +64,7 @@ Fig 2.
 
 ## The Source Language
 
-For specifying syntax, we present the BNF (Backus-Naur Form):
+For specifying the source language syntax, we present the BNF (Backus-Naur Form):
 
 program --> block
 
