@@ -1,5 +1,5 @@
 
-set PYTHONPATH=C:\Users\Ideapad320S\IdeaProjects\workspace-python\python1
+set PYTHONPATH=.
 
 rem type tests\resources\OneOne.txt | python tests\compiler\frontend\lexer\LexerTest.py
 
