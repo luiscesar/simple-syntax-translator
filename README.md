@@ -165,7 +165,12 @@ instruction copies the value of y into x:
    Example:
    
     	set PYTHONPATH=%userprofile%\<download_directory>\simple-syntax-translator
+	
+	or
 
+	set PYTHONPATH=.
+	
+	And run the translator from %userprofile%\<download_directory>\simple-syntax-translator
 
 4) Run Translator
 
